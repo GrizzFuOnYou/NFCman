@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_surface"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btn_back_root"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="← Back"
+            android:textSize="12sp"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="12dp" />
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Root / LSPosed Features"
+                android:textSize="20sp"
+                android:textColor="@color/accent_purple"
+                android:fontFamily="sans-serif-light" />
+
+            <TextView
+                android:id="@+id/root_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checking root access…"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Two-column button grid -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Row 1 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+
+                <Button android:id="@+id/btn_check_root"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Check Root" android:backgroundTint="@color/accent_green"
+                    android:textColor="@color/text_on_accent" android:textSize="12sp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button android:id="@+id/btn_device_info"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Device Info" android:backgroundTint="@color/bg_elevated"
+                    android:textColor="@color/text_primary" android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Row 2 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+
+                <Button android:id="@+id/btn_nfc_info"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="NFC Controller" android:backgroundTint="@color/bg_elevated"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:layout_marginEnd="6dp" android:enabled="false" />
+
+                <Button android:id="@+id/btn_se_info"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Secure Element" android:backgroundTint="@color/bg_elevated"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <!-- Row 3 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+
+                <Button android:id="@+id/btn_routing_table"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="NFC Routing" android:backgroundTint="@color/bg_elevated"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:layout_marginEnd="6dp" android:enabled="false" />
+
+                <Button android:id="@+id/btn_list_aids"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Registered AIDs" android:backgroundTint="@color/bg_elevated"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <!-- Row 4 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+
+                <Button android:id="@+id/btn_nfc_settings"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="NFC Settings" android:backgroundTint="@color/bg_elevated"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:layout_marginEnd="6dp" android:enabled="false" />
+
+                <Button android:id="@+id/btn_force_nfc"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Force Enable NFC" android:backgroundTint="@color/bg_elevated"
+                    android:textColor="@color/accent_cyan" android:textSize="12sp"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <!-- Row 5 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+
+                <Button android:id="@+id/btn_magisk_modules"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Magisk Modules" android:backgroundTint="@color/accent_purple"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:layout_marginEnd="6dp" android:enabled="false" />
+
+                <Button android:id="@+id/btn_lsposed_status"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="LSPosed Status" android:backgroundTint="@color/accent_purple"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <!-- Row 6 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+
+                <Button android:id="@+id/btn_nfc_logcat"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="NFC Logcat" android:backgroundTint="@color/bg_elevated"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:layout_marginEnd="6dp" android:enabled="false" />
+
+                <Button android:id="@+id/btn_set_payment"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Set Payment App" android:backgroundTint="@color/bg_elevated"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <!-- Package name input for set payment -->
+            <EditText android:id="@+id/input_package_name"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Component name (leave blank for this app)"
+                android:inputType="text"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input" android:padding="10dp"
+                android:fontFamily="monospace" android:textSize="12sp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Custom root command -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Custom Root Command" android:textSize="11sp"
+                android:textColor="@color/accent_cyan" android:textAllCaps="true"
+                android:fontFamily="sans-serif-medium" android:letterSpacing="0.08"
+                android:paddingBottom="8dp" android:paddingTop="8dp" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText android:id="@+id/input_root_command"
+                    android:layout_width="0dp" android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:hint="Shell command (e.g. dumpsys nfc)"
+                    android:inputType="text"
+                    android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                    android:background="@color/bg_input" android:padding="8dp"
+                    android:fontFamily="monospace" android:textSize="12sp"
+                    android:layout_marginEnd="8dp" />
+
+                <Button android:id="@+id/btn_exec_command"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:text="Execute" android:backgroundTint="@color/accent_red"
+                    android:textColor="@color/text_primary" android:textSize="12sp"
+                    android:enabled="false" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Output area -->
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Output" android:textSize="11sp" android:textColor="@color/accent_cyan"
+        android:textAllCaps="true" android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.08"
+        android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingTop="8dp" android:paddingBottom="4dp" />
+
+    <ScrollView
+        android:id="@+id/root_output_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/bg_surface">
+
+        <TextView
+            android:id="@+id/root_output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="11sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="monospace"
+            android:lineSpacingExtra="2dp"
+            android:selectable="true"
+            android:text="Select an option above to see output here." />
+    </ScrollView>
+
+</LinearLayout>

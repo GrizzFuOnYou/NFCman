@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/app_description"
+    android:requireDeviceUnlock="false">
+
+    <aid-group
+        android:category="payment"
+        android:description="@string/app_name">
+
+        <!-- Custom wallet AID -->
+        <aid-filter android:name="F001020304050607" />
+        <!-- Visa Credit/Debit -->
+        <aid-filter android:name="A0000000031010" />
+        <!-- Visa Electron -->
+        <aid-filter android:name="A0000000032010" />
+        <!-- Visa V Pay -->
+        <aid-filter android:name="A0000000038010" />
+        <!-- Mastercard -->
+        <aid-filter android:name="A0000000041010" />
+        <!-- Mastercard Maestro -->
+        <aid-filter android:name="A0000000043060" />
+        <!-- Amex -->
+        <aid-filter android:name="A000000025010801" />
+        <!-- Discover -->
+        <aid-filter android:name="A0000001523010" />
+        <!-- JCB -->
+        <aid-filter android:name="A0000000651010" />
+        <!-- UnionPay -->
+        <aid-filter android:name="A000000333010101" />
+        <!-- PPSE (Proximity Payment System Environment) -->
+        <aid-filter android:name="325041592E5359532E4444463031" />
+    </aid-group>
+
+    <aid-group
+        android:category="other"
+        android:description="@string/app_name">
+
+        <!-- HID Access -->
+        <aid-filter android:name="A000000172950001" />
+        <aid-filter android:name="A000000172950002" />
+        <!-- NDEF -->
+        <aid-filter android:name="D2760000850101" />
+        <aid-filter android:name="D276000085010100" />
+        <!-- Custom access -->
+        <aid-filter android:name="F0010203040506" />
+    </aid-group>
+
+</host-apdu-service>

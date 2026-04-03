@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_surface"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="← Back"
+            android:textSize="12sp"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Card Details"
+            android:textSize="20sp"
+            android:textColor="@color/accent_cyan"
+            android:fontFamily="sans-serif-light" />
+    </LinearLayout>
+
+    <!-- Color preview + auto-detect -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@color/bg_surface"
+        android:gravity="center_vertical">
+
+        <View
+            android:id="@+id/card_color_preview"
+            android:layout_width="64dp"
+            android:layout_height="40dp"
+            android:background="@color/card_dark"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:id="@+id/detected_type_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Type: Unknown"
+            android:textSize="13sp"
+            android:textColor="@color/accent_cyan"
+            android:fontFamily="monospace" />
+
+        <Button
+            android:id="@+id/btn_auto_detect"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Auto-detect"
+            android:textSize="11sp"
+            android:backgroundTint="@color/accent_purple"
+            android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Basic Info Section -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Basic Info" android:textSize="11sp" android:textColor="@color/accent_cyan"
+                android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:letterSpacing="0.08"
+                android:paddingBottom="8dp" android:paddingTop="8dp" />
+
+            <EditText android:id="@+id/input_label" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Card Label"
+                android:inputType="text" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:layout_marginBottom="8dp" />
+
+            <Spinner android:id="@+id/spinner_type" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:background="@color/bg_input"
+                android:layout_marginBottom="8dp" android:popupBackground="@color/bg_elevated" />
+
+            <Spinner android:id="@+id/spinner_company" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:background="@color/bg_input"
+                android:layout_marginBottom="8dp" android:popupBackground="@color/bg_elevated" />
+
+            <!-- NFC Technical Data -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="NFC Technical Data" android:textSize="11sp" android:textColor="@color/accent_cyan"
+                android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:letterSpacing="0.08"
+                android:paddingBottom="8dp" android:paddingTop="16dp" />
+
+            <EditText android:id="@+id/input_uid" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="UID (hex, e.g. AABBCCDD)"
+                android:inputType="text" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_atqa" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="ATQA (hex)"
+                android:inputType="text" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_sak" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="SAK (hex)"
+                android:inputType="text" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <!-- Emulation / AID Section -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Emulation / AID" android:textSize="11sp" android:textColor="@color/accent_cyan"
+                android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:letterSpacing="0.08"
+                android:paddingBottom="8dp" android:paddingTop="16dp" />
+
+            <EditText android:id="@+id/input_aid" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Primary AID (hex)"
+                android:inputType="text" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_additional_aids" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Additional AIDs (one per line)"
+                android:inputType="textMultiLine" android:minLines="2"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input" android:padding="10dp"
+                android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_emulation_uid" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Emulation UID override (optional)"
+                android:inputType="text" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_custom_response" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Default APDU Response (e.g. 9000)"
+                android:inputType="text" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <!-- Custom APDU Map -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Custom APDU Map" android:textSize="11sp" android:textColor="@color/accent_cyan"
+                android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:letterSpacing="0.08"
+                android:paddingBottom="8dp" android:paddingTop="16dp" />
+
+            <EditText android:id="@+id/input_apdu_commands" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="APDU Commands (one per line)"
+                android:inputType="textMultiLine" android:minLines="2"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input" android:padding="10dp"
+                android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_apdu_responses" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="APDU Responses (one per line, matching above)"
+                android:inputType="textMultiLine" android:minLines="2"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input" android:padding="10dp"
+                android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <!-- Physical Card Info -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Physical Card Info (Optional)" android:textSize="11sp" android:textColor="@color/accent_cyan"
+                android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:letterSpacing="0.08"
+                android:paddingBottom="8dp" android:paddingTop="16dp" />
+
+            <EditText android:id="@+id/input_card_number" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Card Number (auto-detects type)"
+                android:inputType="number" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_cardholder" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Cardholder Name"
+                android:inputType="textPersonName" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_expiry" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="Expiry (MM/YY)"
+                android:inputType="text" android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint" android:background="@color/bg_input"
+                android:padding="10dp" android:layout_marginBottom="8dp" />
+
+            <!-- Raw Protocol Data -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Raw Protocol Data" android:textSize="11sp" android:textColor="@color/accent_cyan"
+                android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:letterSpacing="0.08"
+                android:paddingBottom="8dp" android:paddingTop="16dp" />
+
+            <EditText android:id="@+id/input_ndef" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="NDEF Data"
+                android:inputType="textMultiLine" android:minLines="2"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input" android:padding="10dp"
+                android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_mifare" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="MIFARE Raw Data"
+                android:inputType="textMultiLine" android:minLines="2"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input" android:padding="10dp"
+                android:fontFamily="monospace" android:layout_marginBottom="8dp" />
+
+            <EditText android:id="@+id/input_isodep" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:hint="ISO-DEP Raw Data"
+                android:inputType="textMultiLine" android:minLines="2"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input" android:padding="10dp"
+                android:fontFamily="monospace" android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom action bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_surface"
+        android:padding="12dp">
+
+        <Button
+            android:id="@+id/btn_emulate_direct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Emulate"
+            android:backgroundTint="@color/accent_purple"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Save Card"
+            android:backgroundTint="@color/accent_cyan"
+            android:textColor="@color/text_on_accent" />
+    </LinearLayout>
+
+</LinearLayout>

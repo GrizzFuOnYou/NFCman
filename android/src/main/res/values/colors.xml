@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Background colors -->
+    <color name="bg_dark">#0A0A0A</color>
+    <color name="bg_surface">#141414</color>
+    <color name="bg_card">#1E1E1E</color>
+    <color name="bg_elevated">#252525</color>
+    <color name="bg_input">#1A1A2E</color>
+
+    <!-- Primary / Accent -->
+    <color name="accent_cyan">#00E5FF</color>
+    <color name="accent_cyan_dark">#00B2CC</color>
+    <color name="accent_purple">#7C4DFF</color>
+    <color name="accent_green">#69F0AE</color>
+    <color name="accent_orange">#FFAB40</color>
+    <color name="accent_red">#FF5252</color>
+    <color name="accent_yellow">#FFD740</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_hint">#606060</color>
+    <color name="text_disabled">#404040</color>
+    <color name="text_on_accent">#000000</color>
+
+    <!-- Status colors -->
+    <color name="color_success">#69F0AE</color>
+    <color name="color_warning">#FFB300</color>
+    <color name="color_error">#FF5252</color>
+    <color name="color_info">#40C4FF</color>
+    <color name="color_emulating">#69F0AE</color>
+    <color name="color_stopped">#9E9E9E</color>
+
+    <!-- Dividers / Borders -->
+    <color name="divider">#2A2A2A</color>
+    <color name="border">#333333</color>
+
+    <!-- Card palette -->
+    <color name="card_blue">#1565C0</color>
+    <color name="card_red">#B71C1C</color>
+    <color name="card_teal">#00695C</color>
+    <color name="card_purple">#4A148C</color>
+    <color name="card_dark">#263238</color>
+</resources>

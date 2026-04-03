@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_surface"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="← Back"
+            android:textSize="12sp"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Card Emulation"
+            android:textSize="20sp"
+            android:textColor="@color/accent_cyan"
+            android:fontFamily="sans-serif-light" />
+
+        <TextView
+            android:id="@+id/emulation_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="○ Stopped"
+            android:textSize="13sp"
+            android:textColor="@color/color_stopped"
+            android:fontFamily="monospace" />
+    </LinearLayout>
+
+    <!-- Active card display -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_surface"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Active Card"
+            android:textSize="11sp"
+            android:textColor="@color/accent_cyan"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/active_card_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No card selected"
+            android:textSize="18sp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:id="@+id/active_card_uid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UID: —"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="monospace"
+            android:layout_marginTop="2dp" />
+
+        <TextView
+            android:id="@+id/active_card_aid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AID: —"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="monospace"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- UID / AID Spoofing -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_surface"
+        android:padding="16dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spoofing Options"
+            android:textSize="11sp"
+            android:textColor="@color/accent_cyan"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="8dp" />
+
+        <!-- UID Spoof Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <Switch
+                android:id="@+id/switch_uid_spoof"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UID Spoof"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:layout_marginEnd="12dp" />
+
+            <EditText
+                android:id="@+id/input_spoof_uid"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:hint="Spoofed UID (hex)"
+                android:inputType="text"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input"
+                android:padding="8dp"
+                android:fontFamily="monospace"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- AID Spoof Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Switch
+                android:id="@+id/switch_aid_spoof"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AID Spoof"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:layout_marginEnd="12dp" />
+
+            <EditText
+                android:id="@+id/input_spoof_aid"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:hint="Spoofed AID (hex)"
+                android:inputType="text"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input"
+                android:padding="8dp"
+                android:fontFamily="monospace"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Control buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btn_configure_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Configure"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_start_stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Start Emulation"
+            android:backgroundTint="@color/accent_cyan"
+            android:textColor="@color/text_on_accent"
+            android:enabled="false" />
+    </LinearLayout>
+
+    <!-- Saved cards list header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select a Card"
+        android:textSize="11sp"
+        android:textColor="@color/accent_cyan"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.08"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp" />
+
+    <!-- Saved cards list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/saved_cards_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="4dp" />
+
+</LinearLayout>
