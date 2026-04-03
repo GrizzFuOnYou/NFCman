@@ -68,9 +68,24 @@ public class CardStorageManager {
 
     /**
      * Loads a card from a text file path.
+     * Only loads files that are within the cards directory to prevent path traversal.
      */
     public CardModel loadCard(String filePath) {
+        if (filePath == null || filePath.isEmpty()) return null;
         File file = new File(filePath);
+        // Restrict to files within the cards directory
+        try {
+            String canonicalPath = file.getCanonicalPath();
+            String canonicalCardsDir = cardsDirectory.getCanonicalPath();
+            if (!canonicalPath.startsWith(canonicalCardsDir + File.separator)
+                    && !canonicalPath.equals(canonicalCardsDir)) {
+                Log.w(TAG, "Rejected path outside cards directory: " + canonicalPath);
+                return null;
+            }
+        } catch (IOException e) {
+            Log.w(TAG, "Could not resolve canonical path: " + filePath);
+            return null;
+        }
         if (!file.exists() || !file.isFile()) return null;
         try {
             StringBuilder sb = new StringBuilder();
@@ -81,7 +96,7 @@ public class CardStorageManager {
                 }
             }
             CardModel card = CardModel.fromTextFormat(sb.toString());
-            card.setFilePath(filePath);
+            card.setFilePath(file.getAbsolutePath());
             return card;
         } catch (IOException e) {
             Log.e(TAG, "Error loading card from: " + filePath, e);
