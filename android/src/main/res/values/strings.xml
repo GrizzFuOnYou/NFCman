@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NFC_Wallet</string>
+    <string name="app_description">Advanced NFC Research Wallet</string>
+
+    <!-- Navigation -->
+    <string name="nav_scan">Scan NFC Card</string>
+    <string name="nav_manual">Manual Entry</string>
+    <string name="nav_emulate">Emulate Card</string>
+    <string name="nav_test">Testing Tools</string>
+    <string name="nav_root">Root / LSPosed</string>
+
+    <!-- Main dashboard -->
+    <string name="dashboard_title">NFC_Wallet</string>
+    <string name="dashboard_subtitle">Advanced NFC Research Wallet</string>
+    <string name="no_cards">No cards saved yet.\nScan an NFC card or add one manually.</string>
+
+    <!-- NFC Scan -->
+    <string name="scan_title">NFC Card Scanner</string>
+    <string name="scan_waiting">Tap an NFC card to scan…</string>
+    <string name="scan_reading">Reading card data…</string>
+    <string name="scan_complete">Scan complete</string>
+
+    <!-- Manual Card -->
+    <string name="manual_title">Card Details</string>
+    <string name="label_card_label">Card Label</string>
+    <string name="label_uid">UID (hex)</string>
+    <string name="label_atqa">ATQA (hex)</string>
+    <string name="label_sak">SAK (hex)</string>
+    <string name="label_primary_aid">Primary AID</string>
+    <string name="label_additional_aids">Additional AIDs (one per line)</string>
+    <string name="label_card_number">Card Number</string>
+    <string name="label_cardholder">Cardholder Name</string>
+    <string name="label_expiry">Expiry (MM/YY)</string>
+    <string name="label_apdu_commands">Custom APDU Commands (one per line)</string>
+    <string name="label_apdu_responses">Custom APDU Responses (one per line)</string>
+    <string name="label_default_response">Default APDU Response</string>
+    <string name="label_emulation_uid">Emulation UID (override)</string>
+    <string name="label_ndef_data">NDEF Raw Data</string>
+    <string name="label_mifare_data">MIFARE Raw Data</string>
+    <string name="label_isodep_data">ISO-DEP Raw Data</string>
+    <string name="btn_auto_detect">Auto-detect Type</string>
+    <string name="btn_save">Save Card</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_emulate_direct">Emulate Now</string>
+    <string name="card_color_label">Card Color</string>
+
+    <!-- Emulation -->
+    <string name="emulation_title">Card Emulation</string>
+    <string name="emulation_stopped">● Stopped</string>
+    <string name="emulation_active">● EMULATING</string>
+    <string name="btn_start_emulation">Start Emulation</string>
+    <string name="btn_stop_emulation">Stop Emulation</string>
+    <string name="uid_spoof_label">UID Spoofing</string>
+    <string name="aid_spoof_label">AID Spoofing</string>
+    <string name="label_spoof_uid">Spoofed UID</string>
+    <string name="label_spoof_aid">Spoofed AID</string>
+    <string name="select_card_hint">Select a card from the list below</string>
+
+    <!-- Testing -->
+    <string name="testing_title">NFC Testing Tools</string>
+    <string name="test_tap_prompt">Tap a card to begin testing</string>
+    <string name="label_apdu_input">APDU Command (hex)</string>
+    <string name="label_aid_probe">AID to probe (blank = all known)</string>
+    <string name="btn_send_apdu">Send APDU</string>
+    <string name="btn_probe_aids">Probe AIDs</string>
+    <string name="btn_get_uid">GET UID</string>
+    <string name="btn_read_binary">READ BINARY sweep</string>
+    <string name="btn_clear_log">Clear Log</string>
+
+    <!-- Root features -->
+    <string name="root_title">Root / LSPosed Features</string>
+    <string name="root_checking">Checking root access…</string>
+    <string name="root_available">✓ Root access available</string>
+    <string name="root_unavailable">✗ Root not available</string>
+    <string name="btn_check_root">Check Root</string>
+    <string name="btn_nfc_info">NFC Controller Info</string>
+    <string name="btn_se_info">Secure Element Info</string>
+    <string name="btn_routing_table">NFC Routing Table</string>
+    <string name="btn_nfc_settings">NFC System Settings</string>
+    <string name="btn_force_nfc">Force Enable NFC</string>
+    <string name="btn_list_aids">List Registered AIDs</string>
+    <string name="btn_magisk_modules">Magisk Modules</string>
+    <string name="btn_lsposed_status">LSPosed Status</string>
+    <string name="btn_device_info">Device Info</string>
+    <string name="btn_nfc_logcat">NFC Logcat Dump</string>
+    <string name="btn_set_payment">Set Preferred Payment App</string>
+    <string name="btn_exec_command">Execute Root Command</string>
+    <string name="label_root_command">Root Shell Command</string>
+    <string name="label_package_name">Package / Component Name</string>
+
+    <!-- Common -->
+    <string name="btn_back">Back</string>
+    <string name="btn_delete">Delete</string>
+    <string name="confirm_delete_title">Delete Card</string>
+    <string name="nfc_required_title">NFC Required</string>
+    <string name="nfc_required_message">NFC is required for this feature. Please enable NFC in Settings.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="open_settings">Open Settings</string>
+</resources>

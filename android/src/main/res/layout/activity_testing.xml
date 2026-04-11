@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_surface"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btn_back_test"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="← Back"
+            android:textSize="12sp"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NFC Testing Tools"
+            android:textSize="20sp"
+            android:textColor="@color/accent_cyan"
+            android:fontFamily="sans-serif-light" />
+    </LinearLayout>
+
+    <!-- Status -->
+    <TextView
+        android:id="@+id/test_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap a card to begin testing…"
+        android:textSize="13sp"
+        android:textColor="@color/accent_cyan"
+        android:fontFamily="monospace"
+        android:background="@color/bg_surface"
+        android:padding="12dp"
+        android:gravity="center" />
+
+    <!-- APDU Transceiver -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_surface"
+        android:padding="12dp"
+        android:layout_marginTop="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="APDU Transceiver" android:textSize="11sp" android:textColor="@color/accent_cyan"
+            android:textAllCaps="true" android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.08" android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/input_apdu_hex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="APDU hex (e.g. 00A4040007A0000000031010)"
+            android:inputType="text"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:background="@color/bg_input"
+            android:padding="10dp"
+            android:fontFamily="monospace"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/btn_send_apdu"
+                android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="2"
+                android:text="Send APDU" android:backgroundTint="@color/accent_cyan"
+                android:textColor="@color/text_on_accent" android:textSize="12sp"
+                android:layout_marginEnd="4dp" android:enabled="false" />
+
+            <Button android:id="@+id/btn_get_uid"
+                android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                android:text="GET UID" android:backgroundTint="@color/bg_elevated"
+                android:textColor="@color/text_primary" android:textSize="11sp"
+                android:layout_marginEnd="4dp" android:enabled="false" />
+
+            <Button android:id="@+id/btn_read_binary"
+                android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"
+                android:text="READ BIN" android:backgroundTint="@color/bg_elevated"
+                android:textColor="@color/text_primary" android:textSize="11sp"
+                android:enabled="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- AID Probe -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_surface"
+        android:padding="12dp"
+        android:layout_marginTop="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="AID Probe" android:textSize="11sp" android:textColor="@color/accent_cyan"
+            android:textAllCaps="true" android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.08" android:layout_marginBottom="8dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/input_probe_aid"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:hint="Specific AID (blank = all)"
+                android:inputType="text"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:background="@color/bg_input"
+                android:padding="8dp"
+                android:fontFamily="monospace"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp" />
+
+            <Button android:id="@+id/btn_probe_aids"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="Probe AIDs" android:backgroundTint="@color/accent_purple"
+                android:textColor="@color/text_primary" android:textSize="12sp"
+                android:enabled="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Log section header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp">
+
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Test Log" android:textSize="11sp" android:textColor="@color/accent_cyan"
+            android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:letterSpacing="0.08" />
+
+        <Button android:id="@+id/btn_clear_test_log"
+            android:layout_width="wrap_content" android:layout_height="28dp"
+            android:text="Clear" android:textSize="11sp"
+            android:backgroundTint="@color/bg_elevated" android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+    <!-- Log output -->
+    <ScrollView
+        android:id="@+id/test_log_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/bg_surface">
+
+        <TextView
+            android:id="@+id/test_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="monospace"
+            android:lineSpacingExtra="2dp"
+            android:selectable="true" />
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_surface"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="← Back"
+            android:textSize="12sp"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NFC Card Scanner"
+            android:textSize="20sp"
+            android:textColor="@color/accent_cyan"
+            android:fontFamily="sans-serif-light" />
+
+        <ProgressBar
+            android:id="@+id/scan_progress"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:visibility="invisible"
+            android:indeterminateTint="@color/accent_cyan" />
+    </LinearLayout>
+
+    <!-- Status bar -->
+    <TextView
+        android:id="@+id/scan_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap an NFC card to scan…"
+        android:textSize="14sp"
+        android:textColor="@color/accent_cyan"
+        android:background="@color/bg_surface"
+        android:padding="16dp"
+        android:gravity="center"
+        android:fontFamily="monospace" />
+
+    <!-- Section header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan Log"
+        android:textSize="11sp"
+        android:textColor="@color/accent_cyan"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.08"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp" />
+
+    <!-- Log output -->
+    <ScrollView
+        android:id="@+id/log_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:background="@color/bg_surface">
+
+        <TextView
+            android:id="@+id/scan_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="monospace"
+            android:lineSpacingExtra="2dp"
+            android:selectable="true" />
+    </ScrollView>
+
+    <!-- Bottom actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_surface"
+        android:padding="12dp">
+
+        <Button
+            android:id="@+id/btn_clear_log"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Clear"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_save_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Save Card"
+            android:backgroundTint="@color/accent_cyan"
+            android:textColor="@color/text_on_accent"
+            android:enabled="false" />
+    </LinearLayout>
+
+</LinearLayout>

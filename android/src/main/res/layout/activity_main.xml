@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Header bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bg_surface"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dashboard_title"
+                android:textSize="26sp"
+                android:textColor="@color/accent_cyan"
+                android:fontFamily="sans-serif-light"
+                android:letterSpacing="0.05" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dashboard_subtitle"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/nfc_status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NFC: Checking…"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/root_status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Root: Checking…"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Navigation buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@color/bg_surface">
+
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Scan"
+            android:textSize="11sp"
+            android:backgroundTint="@color/accent_cyan"
+            android:textColor="@color/text_on_accent"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_manual"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Manual"
+            android:textSize="11sp"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_emulate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Emulate"
+            android:textSize="11sp"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Test"
+            android:textSize="11sp"
+            android:backgroundTint="@color/bg_elevated"
+            android:textColor="@color/text_primary"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_root"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Root"
+            android:textSize="11sp"
+            android:backgroundTint="@color/accent_purple"
+            android:textColor="@color/text_primary" />
+    </LinearLayout>
+
+    <!-- Section header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saved Cards"
+        android:textSize="12sp"
+        android:textColor="@color/accent_cyan"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.08"
+        android:textAllCaps="true"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/no_cards"
+        android:gravity="center"
+        android:textColor="@color/text_hint"
+        android:textSize="15sp"
+        android:visibility="gone"
+        android:padding="32dp" />
+
+    <!-- Card list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/card_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="8dp" />
+
+</LinearLayout>
