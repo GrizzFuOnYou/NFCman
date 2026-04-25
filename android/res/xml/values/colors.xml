@@ -1,11 +1,24 @@
-<!-- android/res/values/colors.xml -->
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2196F3</color>
-    <color name="colorPrimaryDark">#1976D2</color>
-    <color name="colorAccent">#FF9800</color>
-    <color name="background_dark">#1a1a1a</color>
-    <color name="background_card">#2a2a2a</color>
-    <color name="text_primary">#ffffff</color>
-    <color name="text_secondary">#cccccc</color>
+    <!-- NFC Wallet dark theme colors -->
+    <color name="bg_dark">#0D0D0D</color>
+    <color name="bg_surface">#1A1A1A</color>
+    <color name="bg_card">#242424</color>
+    <color name="bg_elevated">#2E2E2E</color>
+    <color name="color_primary">#00BCD4</color>
+    <color name="color_primary_dark">#0097A7</color>
+    <color name="color_accent">#FF6B35</color>
+    <color name="color_success">#4CAF50</color>
+    <color name="color_warning">#FFC107</color>
+    <color name="color_error">#F44336</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_disabled">#616161</color>
+    <color name="divider">#333333</color>
+    <!-- Legacy aliases for compatibility -->
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorAccent">#FF6B35</color>
+    <color name="background_dark">#0D0D0D</color>
+    <color name="background_card">#242424</color>
 </resources>

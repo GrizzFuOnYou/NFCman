@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/bg_surface"
+            android:padding="20dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💳"
+                android:textSize="40sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_detail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Card Name"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_detail_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_primary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Details section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <include layout="@layout/view_detail_row"
+                android:id="@+id/row_uid" />
+
+            <!-- Info rows -->
+            <TextView style="@style/SectionHeader" android:text="Card Info" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@color/bg_card"
+                android:padding="12dp" android:layout_marginBottom="8dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                        android:text="UID" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <TextView android:id="@+id/tv_detail_uid" android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:textColor="@color/text_primary"
+                        android:textSize="13sp" android:fontFamily="monospace" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                        android:text="Type" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <TextView android:id="@+id/tv_detail_type" android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                        android:text="AID" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <TextView android:id="@+id/tv_detail_aid" android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:textColor="@color/text_primary"
+                        android:textSize="13sp" android:fontFamily="monospace" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                        android:text="ATR" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <TextView android:id="@+id/tv_detail_atr" android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:textColor="@color/text_primary"
+                        android:textSize="13sp" android:fontFamily="monospace" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                        android:text="APDU Response" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <TextView android:id="@+id/tv_detail_apdu_response" android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:textColor="@color/text_primary"
+                        android:textSize="13sp" android:fontFamily="monospace" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                        android:text="Techs" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <TextView android:id="@+id/tv_detail_techs" android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                        android:text="Scan Date" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <TextView android:id="@+id/tv_detail_scan_date" android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                        android:text="Manual" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <TextView android:id="@+id/tv_detail_manual" android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                        android:text="Notes" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <TextView android:id="@+id/tv_detail_notes" android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="13sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Extra fields -->
+            <LinearLayout
+                android:id="@+id/layout_extras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView style="@style/SectionHeader" android:text="@string/section_extra_fields" />
+                <TextView
+                    android:id="@+id/tv_detail_extras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_secondary"
+                    android:padding="12dp"
+                    android:background="@color/bg_card" />
+            </LinearLayout>
+
+            <!-- Raw content (expandable) -->
+            <Button
+                android:id="@+id/btn_toggle_raw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/btn_show_raw"
+                style="@style/ButtonSecondary" />
+
+            <LinearLayout
+                android:id="@+id/layout_raw_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <TextView style="@style/SectionHeader" android:text="@string/section_raw" />
+                <TextView
+                    android:id="@+id/tv_raw_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_secondary"
+                    android:padding="12dp"
+                    android:background="@color/bg_card" />
+            </LinearLayout>
+
+            <!-- Action buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <Button
+                    android:id="@+id/btn_edit"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/btn_edit"
+                    style="@style/ButtonSecondary" />
+
+                <Button
+                    android:id="@+id/btn_emulate"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/btn_emulate"
+                    style="@style/ButtonPrimary" />
+
+                <Button
+                    android:id="@+id/btn_export"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/btn_export"
+                    style="@style/ButtonSecondary" />
+
+                <Button
+                    android:id="@+id/btn_delete"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/btn_delete"
+                    style="@style/ButtonDanger" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
