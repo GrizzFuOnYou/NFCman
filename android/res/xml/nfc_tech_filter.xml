@@ -19,6 +19,9 @@
         <tech>android.nfc.tech.Ndef</tech>
     </tech-list>
     <tech-list>
+        <tech>android.nfc.tech.NdefFormatable</tech>
+    </tech-list>
+    <tech-list>
         <tech>android.nfc.tech.MifareClassic</tech>
     </tech-list>
     <tech-list>

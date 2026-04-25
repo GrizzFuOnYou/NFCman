@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/advanced_title"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- === APDU Console === -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_apdu_console"
+            android:paddingStart="0dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="APDU hex (e.g. 00A4040007A0000000031010)">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_apdu_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:fontFamily="monospace"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Pre-built command buttons -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <Button android:id="@+id/btn_cmd_select" style="@style/ButtonSecondary"
+                android:layout_width="0dp" android:layout_weight="1" android:layout_height="36dp"
+                android:text="SELECT" android:layout_marginEnd="4dp" android:textSize="11sp" />
+            <Button android:id="@+id/btn_cmd_getuid" style="@style/ButtonSecondary"
+                android:layout_width="0dp" android:layout_weight="1" android:layout_height="36dp"
+                android:text="GET UID" android:layout_marginEnd="4dp" android:textSize="11sp" />
+            <Button android:id="@+id/btn_cmd_readbin" style="@style/ButtonSecondary"
+                android:layout_width="0dp" android:layout_weight="1" android:layout_height="36dp"
+                android:text="READ BIN" android:layout_marginEnd="4dp" android:textSize="11sp" />
+            <Button android:id="@+id/btn_cmd_getdata" style="@style/ButtonSecondary"
+                android:layout_width="0dp" android:layout_weight="1" android:layout_height="36dp"
+                android:text="GET DATA" android:textSize="11sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_send_apdu"
+            style="@style/ButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/btn_send_apdu" />
+
+        <ScrollView android:id="@+id/scroll_apdu" android:layout_width="match_parent"
+            android:layout_height="150dp" android:background="@color/bg_surface"
+            android:layout_marginBottom="16dp">
+            <TextView android:id="@+id/tv_apdu_log" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:padding="8dp"
+                android:fontFamily="monospace" android:textSize="11sp"
+                android:textColor="@color/text_primary"
+                android:text="Tap a card, then send APDU commands…\n" />
+        </ScrollView>
+
+        <!-- === Tag Inspector === -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_tag_inspector"
+            android:paddingStart="0dp" />
+
+        <Button android:id="@+id/btn_tag_dump" style="@style/ButtonSecondary"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:text="@string/btn_tag_dump" />
+
+        <ScrollView android:id="@+id/scroll_tag" android:layout_width="match_parent"
+            android:layout_height="120dp" android:background="@color/bg_surface"
+            android:layout_marginBottom="16dp">
+            <TextView android:id="@+id/tv_tag_info" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:padding="8dp"
+                android:fontFamily="monospace" android:textSize="11sp"
+                android:textColor="@color/text_primary" android:text="Tap a card to inspect…\n" />
+        </ScrollView>
+
+        <!-- === NDEF Tools === -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_ndef_tools"
+            android:paddingStart="0dp" />
+
+        <Button android:id="@+id/btn_ndef_write" style="@style/ButtonSecondary"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:text="@string/btn_ndef_write" />
+
+        <ScrollView android:id="@+id/scroll_ndef" android:layout_width="match_parent"
+            android:layout_height="80dp" android:background="@color/bg_surface"
+            android:layout_marginBottom="16dp">
+            <TextView android:id="@+id/tv_ndef_log" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:padding="8dp"
+                android:fontFamily="monospace" android:textSize="11sp"
+                android:textColor="@color/text_primary" android:text="NDEF output…\n" />
+        </ScrollView>
+
+        <!-- === NCI Logs (root) === -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_nci_logs"
+            android:paddingStart="0dp" />
+
+        <Button android:id="@+id/btn_load_nci" style="@style/ButtonSecondary"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:text="@string/btn_load_nci" />
+
+        <ScrollView android:id="@+id/scroll_nci" android:layout_width="match_parent"
+            android:layout_height="120dp" android:background="@color/bg_surface"
+            android:layout_marginBottom="16dp">
+            <TextView android:id="@+id/tv_nci_log" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:padding="8dp"
+                android:fontFamily="monospace" android:textSize="10sp"
+                android:textColor="@color/text_secondary" android:text="NCI log…\n" />
+        </ScrollView>
+
+        <!-- === SE Discovery (root) === -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_se_discovery"
+            android:paddingStart="0dp" />
+
+        <Button android:id="@+id/btn_se_discover" style="@style/ButtonSecondary"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:text="@string/btn_se_discover" />
+
+        <ScrollView android:id="@+id/scroll_se" android:layout_width="match_parent"
+            android:layout_height="80dp" android:background="@color/bg_surface"
+            android:layout_marginBottom="16dp">
+            <TextView android:id="@+id/tv_se_log" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:padding="8dp"
+                android:fontFamily="monospace" android:textSize="11sp"
+                android:textColor="@color/text_secondary" android:text="SE info…\n" />
+        </ScrollView>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/root_tools_title"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Root Status Dashboard -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_root_dashboard"
+            android:paddingStart="0dp" />
+
+        <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="8dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:id="@+id/tv_root_status" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textSize="15sp"
+                    android:textStyle="bold" android:layout_marginBottom="6dp"
+                    android:text="Root: checking…" android:textColor="@color/text_secondary" />
+                <TextView android:id="@+id/tv_magisk_status" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textSize="14sp"
+                    android:layout_marginBottom="6dp"
+                    android:text="Magisk: checking…" android:textColor="@color/text_secondary" />
+                <TextView android:id="@+id/tv_lsposed_status" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textSize="14sp"
+                    android:text="LSPosed: checking…" android:textColor="@color/text_secondary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- NFC Controller Info -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_nfc_controller"
+            android:paddingStart="0dp" />
+
+        <Button android:id="@+id/btn_read_nfc_info" style="@style/ButtonSecondary"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:text="@string/btn_read_nfc_info" />
+
+        <TextView android:id="@+id/tv_nfc_controller_info"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/bg_card" android:padding="12dp"
+            android:fontFamily="monospace" android:textSize="10sp"
+            android:textColor="@color/text_secondary"
+            android:text="Press button to load NFC controller info…"
+            android:layout_marginBottom="12dp" />
+
+        <!-- UID Clone Tool -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_uid_clone"
+            android:paddingStart="0dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="@string/uid_clone_hint">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_uid_clone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:fontFamily="monospace"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button android:id="@+id/btn_write_uid" style="@style/ButtonSecondary"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" android:text="@string/btn_write_uid" />
+
+        <!-- NCI Debug Log Viewer -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_nci_viewer"
+            android:paddingStart="0dp" />
+
+        <Button android:id="@+id/btn_read_nci" style="@style/ButtonSecondary"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:text="@string/btn_read_nci" />
+
+        <TextView android:id="@+id/tv_nci_log"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/bg_card" android:padding="12dp"
+            android:fontFamily="monospace" android:textSize="10sp"
+            android:textColor="@color/text_secondary"
+            android:text="NCI log will appear here…"
+            android:layout_marginBottom="12dp"
+            android:minLines="4" />
+
+        <!-- SE Access Tool -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_se_access"
+            android:paddingStart="0dp" />
+
+        <Button android:id="@+id/btn_read_se" style="@style/ButtonSecondary"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:text="@string/btn_read_se" />
+
+        <TextView android:id="@+id/tv_se_info"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/bg_card" android:padding="12dp"
+            android:fontFamily="monospace" android:textSize="11sp"
+            android:textColor="@color/text_secondary"
+            android:text="SE info will appear here…"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Magisk Modules -->
+        <TextView style="@style/SectionHeader" android:text="@string/section_magisk_modules"
+            android:paddingStart="0dp" />
+
+        <Button android:id="@+id/btn_read_magisk" style="@style/ButtonSecondary"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:text="@string/btn_read_magisk" />
+
+        <TextView android:id="@+id/tv_magisk_modules"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/bg_card" android:padding="12dp"
+            android:fontFamily="monospace" android:textSize="11sp"
+            android:textColor="@color/text_secondary"
+            android:text="Magisk module list will appear here…"
+            android:layout_marginBottom="12dp" />
+
+    </LinearLayout>
+
+</ScrollView>

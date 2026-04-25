@@ -3,15 +3,33 @@
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
     android:description="@string/service_description"
     android:requireDeviceUnlock="false">
-    
-    <aid-group android:category="payment" android:description="@string/payment_cards">
-        <aid-filter android:name="F001020304050607" />
-        <aid-filter android:name="A000000172950001" />
-        <aid-filter android:name="A0000001510000" />
+
+    <!-- Payment AIDs -->
+    <aid-group android:category="payment" android:description="@string/nav_wallet">
+        <aid-filter android:name="A0000000031010" />  <!-- Visa -->
+        <aid-filter android:name="A0000000032010" />  <!-- Visa Electron -->
+        <aid-filter android:name="A0000000033010" />  <!-- Visa Interlink -->
+        <aid-filter android:name="A0000000038010" />  <!-- Visa Plus -->
+        <aid-filter android:name="A0000000041010" />  <!-- Mastercard -->
+        <aid-filter android:name="A0000000043060" />  <!-- Maestro -->
+        <aid-filter android:name="A0000000044010" />  <!-- Maestro UK -->
+        <aid-filter android:name="A0000000046000" />  <!-- Cirrus -->
+        <aid-filter android:name="A000000025010402" /> <!-- Amex -->
+        <aid-filter android:name="A0000000651010" />  <!-- JCB -->
+        <aid-filter android:name="A0000000333010101" /> <!-- Discover -->
+        <aid-filter android:name="A000000172950001" />  <!-- UnionPay -->
+        <aid-filter android:name="A0000002771010" />   <!-- PBOC -->
+        <aid-filter android:name="A0000003241010" />   <!-- Visa QPboc -->
+        <aid-filter android:name="A0000001510000" />   <!-- Maestro -->
+        <aid-filter android:name="A000000152414341" /> <!-- Interac -->
     </aid-group>
-    
-    <aid-group android:category="other" android:description="@string/access_cards">
-        <aid-filter android:name="F0010203040506" />
-        <aid-filter android:name="D2760000850101" />
+
+    <!-- Access / Other AIDs -->
+    <aid-group android:category="other" android:description="@string/nav_tools">
+        <aid-filter android:name="D2760000850101" />   <!-- NFC Forum Type 4 -->
+        <aid-filter android:name="F0010203040506" />   <!-- Test AID -->
+        <aid-filter android:name="A0000005272110" />   <!-- Global Platform -->
+        <aid-filter android:name="F001020304050607" /> <!-- Generic -->
     </aid-group>
+
 </host-apdu-service>

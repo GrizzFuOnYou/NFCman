@@ -1,14 +1,113 @@
 <!-- android/res/values/strings.xml -->
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NFC Clone</string>
+    <!-- App -->
+    <string name="app_name">NFC Wallet</string>
     <string name="service_description">NFC Card Emulation Service</string>
-    <string name="payment_cards">Payment Cards</string>
-    <string name="access_cards">Access Control Cards</string>
+
+    <!-- Bottom Nav -->
+    <string name="nav_wallet">Wallet</string>
+    <string name="nav_scan">Scan</string>
+    <string name="nav_emulate">Emulate</string>
+    <string name="nav_tools">Tools</string>
+
+    <!-- Main -->
+    <string name="nfc_status_on">NFC: ON</string>
+    <string name="nfc_status_off">NFC: OFF</string>
+    <string name="nfc_status_na">NFC: N/A</string>
+    <string name="root_status_yes">ROOT: YES</string>
+    <string name="root_status_no">ROOT: NO</string>
+
+    <!-- Scan -->
+    <string name="scan_title">NFC Card Scanner</string>
+    <string name="scan_instructions">Hold NFC card near the back of your device</string>
+    <string name="scan_ready">Ready to scan — hold card near device</string>
+    <string name="scan_detecting">Card detected! Reading…</string>
+    <string name="scan_complete">Scan complete!</string>
+    <string name="btn_save_card">Save Card</string>
+    <string name="btn_edit_save">Edit &amp; Save</string>
+
+    <!-- Manual Entry -->
+    <string name="manual_entry_title">Add Card</string>
+    <string name="label_card_name">Card Name</string>
+    <string name="label_uid">UID (hex)</string>
+    <string name="label_card_type">Card Type</string>
+    <string name="label_company">Company / Network</string>
+    <string name="label_aid">AID (hex, optional)</string>
+    <string name="label_atr">ATR (hex, optional)</string>
+    <string name="label_apdu_response">APDU SELECT Response (hex)</string>
+    <string name="label_notes">Notes</string>
+    <string name="btn_save">Save Card</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Card List -->
+    <string name="card_list_title">My Cards</string>
+    <string name="empty_cards">No cards saved yet.\nTap + to add a card manually\nor use Scan to read a card.</string>
+    <string name="search_hint">Search cards…</string>
+
+    <!-- Card Detail -->
+    <string name="detail_title">Card Details</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_emulate">Emulate</string>
+    <string name="btn_export">Export TXT</string>
+    <string name="btn_show_raw">Show Raw</string>
+    <string name="btn_hide_raw">Hide Raw</string>
+    <string name="section_extra_fields">Extra Data</string>
+    <string name="section_raw">Raw .txt Content</string>
+
+    <!-- Emulation -->
+    <string name="emulation_title">NFC Emulation</string>
+    <string name="emulation_stopped">Emulation stopped</string>
+    <string name="btn_start_emulation">▶ Start Emulation</string>
+    <string name="btn_stop_emulation">■ Stop Emulation</string>
+    <string name="btn_spoof_uid">Spoof UID (Root)</string>
+    <string name="label_select_card">Select Card</string>
+    <string name="label_custom_apdu">Custom APDU Response (hex)</string>
+
+    <!-- Advanced Test -->
+    <string name="advanced_title">Advanced Testing</string>
+    <string name="section_apdu_console">APDU Console</string>
+    <string name="section_tag_inspector">Tag Inspector</string>
+    <string name="section_ndef_tools">NDEF Tools</string>
+    <string name="section_nci_logs">NCI Logs (Root)</string>
+    <string name="section_se_discovery">SE Discovery (Root)</string>
+    <string name="apdu_placeholder">00 A4 04 07 A0 00 00 00 03 10 10</string>
+    <string name="btn_send_apdu">Send</string>
+    <string name="btn_select_cmd">SELECT</string>
+    <string name="btn_getuid_cmd">GET UID</string>
+    <string name="btn_readbin_cmd">READ BIN</string>
+    <string name="btn_getdata_cmd">GET DATA</string>
+    <string name="btn_tag_dump">Dump Tag</string>
+    <string name="btn_ndef_write">Write NDEF</string>
+    <string name="btn_load_nci">Load NCI Logs</string>
+    <string name="btn_se_discover">Discover SE</string>
+
+    <!-- Root Tools -->
+    <string name="root_tools_title">Root Tools</string>
+    <string name="section_root_dashboard">Root Status</string>
+    <string name="section_nfc_controller">NFC Controller Info</string>
+    <string name="section_uid_clone">UID Clone Tool</string>
+    <string name="section_nci_viewer">NCI Debug Log</string>
+    <string name="section_se_access">Secure Element Access</string>
+    <string name="section_magisk_modules">Magisk Modules</string>
+    <string name="btn_write_uid">Write UID to Device</string>
+    <string name="btn_read_nfc_info">Read NFC Controller Info</string>
+    <string name="btn_read_nci">Read NCI Log</string>
+    <string name="btn_read_se">Read SE Info</string>
+    <string name="btn_read_magisk">List Magisk Modules</string>
+    <string name="uid_clone_hint">Enter UID hex (e.g. 04A1B2C3)</string>
+
+    <!-- Errors and messages -->
     <string name="nfc_required_title">NFC Required</string>
-    <string name="nfc_required_message">This app requires NFC to function. Please enable NFC in your device settings.</string>
+    <string name="nfc_required_message">This app requires NFC. Please enable NFC in Settings.</string>
     <string name="permissions_required_title">Permissions Required</string>
-    <string name="permissions_required_message">This app needs various permissions to read and store NFC card data.</string>
-    <string name="storage_permission_title">Storage Access Required</string>
-    <string name="storage_permission_message">This app needs access to storage to save NFC card data.</string>
+    <string name="permissions_required_message">Storage permissions are needed to save card data.</string>
+    <string name="error_no_card">No card loaded</string>
+    <string name="error_root_required">Root access required for this feature</string>
+    <string name="delete_confirm_title">Delete Card</string>
+    <string name="delete_confirm_message">Are you sure you want to delete this card?</string>
+    <string name="tools_menu_title">Tools</string>
+    <string name="option_advanced_test">Advanced Test</string>
+    <string name="option_root_tools">Root Tools</string>
 </resources>

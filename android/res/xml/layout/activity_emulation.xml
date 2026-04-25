@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title + Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/emulation_title"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/status_indicator"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@color/text_disabled" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_emulation_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emulation_stopped"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Card selector -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_select_card"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinner_card"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/bg_elevated"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- UID field -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="@string/label_uid">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_uid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:fontFamily="monospace"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- AID field -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="@string/label_aid">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_aid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:fontFamily="monospace"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Custom APDU -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/label_custom_apdu">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_custom_apdu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:fontFamily="monospace"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Start/Stop button -->
+        <Button
+            android:id="@+id/btn_toggle_emulation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/btn_start_emulation"
+            style="@style/ButtonPrimary" />
+
+        <!-- Spoof UID button -->
+        <Button
+            android:id="@+id/btn_spoof_uid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_spoof_uid"
+            style="@style/ButtonSecondary" />
+
+        <!-- Emulation log -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emulation Log"
+            style="@style/SectionHeader"
+            android:paddingStart="0dp" />
+
+        <ScrollView
+            android:id="@+id/scroll_log"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/bg_surface">
+
+            <TextView
+                android:id="@+id/tv_emulation_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:fontFamily="monospace"
+                android:textSize="11sp"
+                android:textColor="@color/text_primary"
+                android:text="APDU log will appear here…\n" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</ScrollView>
